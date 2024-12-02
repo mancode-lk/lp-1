@@ -1,0 +1,79 @@
+[23-Aug-2024 18:44:54 Asia/Colombo] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/posfkpop/mancode.lk/lp/backend/conn.php on line 18
+[23-Aug-2024 18:44:55 Asia/Colombo] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/posfkpop/mancode.lk/lp/backend/conn.php on line 18
+[05-Sep-2024 14:52:00 Asia/Colombo] PHP Warning:  mysqli::__construct(): (HY000/2002): No such file or directory in /home/posfkpop/mancode.lk/lp/backend/conn.php on line 18
+[05-Sep-2024 14:52:00 Asia/Colombo] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 36
+[05-Sep-2024 14:52:00 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 38
+[05-Sep-2024 14:52:00 Asia/Colombo] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 56
+[05-Sep-2024 14:52:00 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 58
+[05-Sep-2024 14:52:00 Asia/Colombo] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 196
+[05-Sep-2024 14:52:00 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 200
+[21-Oct-2024 04:36:07 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[23-Oct-2024 01:06:26 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[24-Oct-2024 14:32:44 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[24-Oct-2024 14:44:29 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[24-Oct-2024 14:48:24 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[24-Oct-2024 14:50:56 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[24-Oct-2024 14:51:05 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[24-Oct-2024 14:51:44 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 14:43:18 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 14:43:19 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 14:50:34 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 14:51:18 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 14:51:52 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 14:51:52 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 16:57:42 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 16:58:08 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 17:00:39 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 17:02:41 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 17:03:14 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 17:05:21 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 17:15:48 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[28-Oct-2024 17:16:07 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 16:54:49 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 16:54:50 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 16:56:01 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 17:03:13 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 17:12:51 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 17:13:41 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 17:14:07 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 17:15:15 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 17:15:47 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[30-Oct-2024 17:17:58 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 09:32:39 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 09:34:53 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 09:38:52 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 09:45:51 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 10:20:24 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 10:29:01 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 11:26:44 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 11:31:31 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 11:32:41 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 11:40:17 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 12:04:40 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 12:05:28 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 12:05:40 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[31-Oct-2024 22:15:49 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 11:58:55 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 11:59:33 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 12:25:37 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 16:39:22 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 16:50:37 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 16:55:44 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 16:57:01 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 16:57:52 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 17:02:55 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 17:03:20 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 18:21:38 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 18:42:27 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[01-Nov-2024 18:43:36 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[04-Nov-2024 02:41:38 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[04-Nov-2024 02:43:51 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/delivery_managment.php on line 61
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'posfkpop_new_lp_system_admin'@'localhost' (using password: YES) in /home/posfkpop/mancode.lk/lp/backend/conn.php on line 21
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 36
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 38
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 56
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 58
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/posfkpop/mancode.lk/lp/backend/conn.php on line 30
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/backend/conn.php on line 32
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 196
+[22-Nov-2024 08:19:47 Asia/Colombo] PHP Notice:  Trying to get property 'num_rows' of non-object in /home/posfkpop/mancode.lk/lp/final_order_list.php on line 200
