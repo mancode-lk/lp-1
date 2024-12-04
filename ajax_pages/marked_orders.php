@@ -181,7 +181,7 @@
         $dm_id =0;
       }
            // Initialize the base SQL query
-           $sql_sent_order = "SELECT * FROM tbl_orders WHERE or_status='$o_st' AND or_st_date BETWEEN '$from_date' AND '$t_date' AND del_method='$dm_id'";
+           $sql_sent_order = "SELECT * FROM tbl_orders WHERE or_status='$o_st' AND or_st_date BETWEEN '$from_date' AND '$t_date'";
 
            // Check if search key is provided
            if (isset($_REQUEST['skey']) && $_REQUEST['skey'] !== "") {
