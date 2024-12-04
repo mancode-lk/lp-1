@@ -3,6 +3,13 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+  $dateNote = date('Y-m-d');
+
+  $sqlUpdateNote= "INSERT INTO tbl_marked_item_note (mi_note_ref) VALUES ('$dateNote')";
+  $rsUpdateNote = $conn->query($sqlUpdateNote);
+
+  $last_id =$conn->insert_id;
+
     if (isset($_FILES['csv_file']) && $_FILES['csv_file']['error'] == 0) {
         $fileTmpPath = $_FILES['csv_file']['tmp_name'];
         $fileName = $_FILES['csv_file']['name'];
@@ -24,12 +31,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     }
                     else{
                       $barcode = $conn->real_escape_string(
-    preg_replace('/[^\x20-\x7E]/', '', trim($data[0]))
-);
-
-
+            preg_replace('/[^\x20-\x7E]/', '', trim($data[0]))
+        );
 
                       $status =$_REQUEST['sostats'];
+
+                      $sqlMi = "INSERT INTO tbl_marked_item(mi_barcode,mi_status,mi_note_id) VALUES ('$barcode','$status','$last_id')";
+                      $rsMi = $conn->query($sqlMi);
+
                       $sql = "UPDATE tbl_delivery_orders SET del_status= $status WHERE barcode='$barcode'";
                       $rs = $conn->query($sql);
                     }
@@ -46,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error: No file uploaded or there was an error with the upload.";
     }
 }
-exit();
+
 header('location:../delivery_managment.php');
 exit();
  ?>

@@ -12,6 +12,7 @@
 						<div class="page-title">
 							<h4>Delivery Management</h4>
 						</div>
+						<a href="marked_report.php" class="btn btn-success" name="button">Marked Reports</a>
 						<a href="delivery_report.php" class="btn btn-secondary" name="button">Delivery Report</a>
 						<button type="button" onclick="openStaffIdModal()" class="btn btn-warning" name="button">Check Staff ID</button>
 					</div>
