@@ -3,7 +3,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $dateNote = date('Y-m-d');
+  $dateNote = date('Y-m-d')."-Marked";
 
   $sqlUpdateNote= "INSERT INTO tbl_marked_item_note (mi_note_ref) VALUES ('$dateNote')";
   $rsUpdateNote = $conn->query($sqlUpdateNote);

@@ -20,7 +20,7 @@
 
 					<div class="card">
 						<div class="card-body">
-							<div id="del_report_filters">
+							<div>
 								<div class="row">
 									<!-- date range -->
 									<div class="col-3">
@@ -48,18 +48,37 @@
 										</div>
 									</div>
 									<!-- status End -->
-									<div class="col-3">
-										<div class="form-group">
-											<input type="checkbox" id="all_staff_check" onchange="" name="" value="1" checked>
-											<label for="">All Staff</label>
-											<button type="button" class="btn btn-warning btn-sm d-inline" onclick="selectStaff()" name="button">Select Staff</button>
-										</div>
-									</div>
 								</div>
 								<button type="button" class="btn btn-primary btn-sm" name="button" onclick="filterOrders()">Apply Filter</button>
 							</div>
 							<!-- filters end -->
-							<div id="del_report">
+							<div  id="data_mi_note" style="height:200px;overflow-y:scroll;">
+								<table class="table datanew">
+									<thead>
+										<tr>
+											<th>Marked Item Date</th>
+											<th>Reference</th>
+											<th>Data</th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+											$sqlAll ="SELECT * FROM tbl_marked_item_note";
+											$rsAll = $conn->query($sqlAll);
+											if($rsAll->num_rows > 0){
+												while($rowAll = $rsAll->fetch_assoc()){
+										 ?>
+										<tr>
+											<td> <?= $rowAll['mi_note_date'] ?>  </td>
+											<td> <?= $rowAll['mi_note_ref'] ?>  </td>
+											<td> <button class="btn btn-secondary btn-sm" onclick="loadMiData(<?= $rowAll['mi_note_id'] ?>)">View Data</button>  </td>
+										</tr>
+									<?php } } ?>
+									</tbody>
+								</table>
+							</div>
+							<hr>
+							<div id="data_mi">
 
 							</div>
 						</div>
@@ -75,7 +94,7 @@
 				<div class="modal-content">
 					<button  class="btn btn-primary btn-sm">Select Staffs</button>
 					<div class="container">
-						
+
 					</div>
 				</div>
 			</div>
@@ -84,8 +103,11 @@
 
     <?php include './layouts/footer.php' ?>
 		<script type="text/javascript">
-
-
+			function loadMiData(mi_id){
+				$('#data_mi').load('ajax_pages/loadMiData.php',{
+					id:mi_id
+				});
+			}
 		</script>
     </body>
 </html>
