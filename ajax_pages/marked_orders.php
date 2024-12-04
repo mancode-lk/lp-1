@@ -77,6 +77,11 @@
             $sql_sent_order .= " AND page_id='$page_id'";
         }
 
+        if (isset($_SESSION['sub_item_id'])) {
+            $sub_item_id = $_SESSION['sub_item_id'];
+            $sql_sent_order .= " AND sub_name='$sub_item_id'";
+        }
+
         // Check if item_id is selected
         if (isset($_SESSION['item_id'])) {
             $item_id = $_SESSION['item_id'];
@@ -84,9 +89,7 @@
         }
 
         // Check user level and add condition accordingly
-        if ($u_level == 1) {
-            // No additional conditions needed for user level 1
-        } else {
+        if ($u_level != 1) {
             $sql_sent_order .= " AND s_u_id='$u_id'";
         }
 
@@ -166,7 +169,7 @@
       <th>Distric</th>
       <th>City</th>
       <th>Order Status</th>
-      <th>Page </th>
+      <th>Sub Item </th>
       <th>Mark</th>
       <th>Modification/Delete </th>
     </tr>
@@ -193,6 +196,11 @@
            if (isset($_SESSION['page_id_sel'])) {
                $page_id = $_SESSION['page_id_sel'];
                $sql_sent_order .= " AND page_id='$page_id'";
+           }
+
+           if (isset($_SESSION['sub_item_id'])) {
+               $sub_item_id = $_SESSION['sub_item_id'];
+               $sql_sent_order .= " AND sub_name='$sub_item_id'";
            }
 
            // Check if item_id is selected
@@ -266,7 +274,7 @@
       <td> <?= $rowSentOrders['distric'] ?></td>
       <td> <?= $rowSentOrders['city'] ?></td>
       <td> <?= $order_st_text ?> </td>
-      <td> <?= $pageName ?></td>
+      <td> <?= $rowSentOrders['sub_name'] ?></td>
       <td>
         <button type="button" class="btn btn-primary" onclick="markOrder('<?= $rowSentOrders['or_id'] ?>')">Mark</button>
       </td>

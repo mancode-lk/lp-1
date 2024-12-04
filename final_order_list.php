@@ -16,7 +16,6 @@
 						</div>
 					</div>
 
-
 					<!-- /product list -->
 					<div class="card">
 						<div class="card-body">
@@ -64,6 +63,31 @@
                                     </div>
                                     <button type="submit" class="btn btn-warning btn-sm">Select Item</button>
                                     </form> <br>
+																		<?php
+																				if(isset($_SESSION['item_id'])){
+																				$item_name = $_SESSION['item_id'];
+																				$i_id=getDataBack($conn,'tbl_items','item_name',$item_name,'item_id');
+																			?>
+																			<form action="backend/sel_sub_item.php" method="post">
+	                                        <input type="hidden" name="back_link" value="0" id="">
+	                                    <div class="form-group">
+	                                        <select name="sub_item_id" id="" class="form-control" required>
+	                                            <option value="">Select Sub Item</option>
+	                                            <option value="0">Remove Selected Sub Item</option>
+	                                            <?php
+																					      $sql_pages ="SELECT * FROM tbl_sub_items WHERE item_id='$i_id'";
+																					      $rs_pages = $conn->query($sql_pages);
+
+																					      if($rs_pages->num_rows > 0){
+																					        while($row_pages = $rs_pages->fetch_assoc()){
+																					     ?>
+	                                                <option value="<?= $row_pages['sub_name'] ?>"><?= $row_pages['sub_name'] ?></option>
+	                                         <?php } } ?>
+	                                        </select>
+	                                    </div>
+	                                    <button type="submit" class="btn btn-success btn-sm">Select Sub Item</button>
+																		</form> <br>
+																		<?php } ?>
 								</div>
 								<div class="col-8">
 									<div class="row">
@@ -97,12 +121,19 @@
 
                                                     $pageName = getDataBack($conn,'tbl_pages','page_id',$page_id,'page_name');
                                                 ?>
-                                                    <h3> Selected Page <span style="color:#b247ff;"><?= $pageName ?></span> </h3> <hr>
+                                                    <h6> Selected Page <span style="color:#b247ff;"><?= $pageName ?></span> </h6> <hr>
                                                 <?php } ?>
+
+																								<?php if(isset($_SESSION['sub_item_id'])){
+		                                                    $sub_item = $_SESSION['sub_item_id'];
+		                                                ?>
+		                                                    <h6> Selected sub item <span style="color:#1c59ff;"><?= $sub_item ?></span> </h6> <hr>
+		                                                <?php } ?>
+
                                                 <?php if(isset($_SESSION['item_id'])){
                                                     $item_id = $_SESSION['item_id'];
                                                 ?>
-                                                    <h3> Selected Item <span style="color:#b247ff;"><?= $item_id ?></span> </h3> <hr>
+                                                    <h6> Selected Item <span style="color:#b247ff;"><?= $item_id ?></span> </h6> <hr>
                                                 <?php } ?>
 											<h3>Total Orders: <span style="color:orange;" id="Total_Orders">   </span>  </h3>
 											<h3 id="status_text" style="color:orange;"></h3>
@@ -170,6 +201,10 @@
 					<div class="modal-body">
 						<form  action="backend/confirm_complete.php" method="post">
 							<input type="hidden" name="id" value="" id="order_id_confirm">
+							<div class="form-group">
+								<label for="">Specified Date</label>
+								<input type="date" class="form-control" name="confirmed_date_value" value="">
+							</div>
 							<div class="form-group">
 								<label for="">Address</label>
 								<textarea name="add" id="address" class="form-control" rows="8" cols="80" required></textarea>

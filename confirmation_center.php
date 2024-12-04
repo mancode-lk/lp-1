@@ -125,6 +125,10 @@
 						<form  action="backend/confirm_complete.php" method="post">
 							<input type="hidden" name="id" value="" id="order_id_confirm">
 							<div class="form-group">
+								<label for="">Specified Date</label>
+								<input type="date" class="form-control" name="confirmed_date_value" value="">
+							</div>
+							<div class="form-group">
 								<label for="">Address</label>
 								<textarea name="add" id="address" class="form-control" rows="8" cols="80" required></textarea>
 							</div>

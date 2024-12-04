@@ -5,6 +5,7 @@
   $id = $_REQUEST['id'];
   $cod_amount = mysqli_real_escape_string($conn,$_REQUEST['cod_amount']);
   $add = mysqli_real_escape_string($conn,$_REQUEST['add']);
+  $confirmed_date_value = mysqli_real_escape_string($conn,$_REQUEST['confirmed_date_value']);
   $dis = mysqli_real_escape_string($conn,$_REQUEST['dis']);
   $city = mysqli_real_escape_string($conn,$_REQUEST['city']);
 
@@ -22,6 +23,12 @@
 
   $adminId = $_SESSION['uid'];
 
+  if($confirmed_date_value != ""){
+    $or_up_date = $confirmed_date_value;
+  }
+
+  $marked_date=date('Y-m-d');
+
   if($dis == "" && $city == ""){
     if($item == ""){
         $sql = "UPDATE tbl_orders SET address='$add',
@@ -30,7 +37,7 @@
         or_st_date='$or_up_date',
         or_up_time='$or_update_time',
         del_method='$del_method',
-        remarks='$remark',or_status='1',pay_st='$pay_st' WHERE or_id ='$id'";
+        remarks='$remark',or_status='1',pay_st='$pay_st',confirmed_date='$marked_date' WHERE or_id ='$id'";
     }
     else{
         $sql = "UPDATE tbl_orders SET address='$add',
@@ -40,7 +47,7 @@
         or_st_date='$or_up_date',
         or_up_time='$or_update_time',
         del_method='$del_method',
-        remarks='$remark',or_status='1',pay_st='$pay_st' WHERE or_id ='$id'";
+        remarks='$remark',or_status='1',pay_st='$pay_st',confirmed_date='$marked_date' WHERE or_id ='$id'";
     }
 
   }
@@ -54,7 +61,7 @@
                                   or_st_date='$or_up_date',
                                   or_up_time='$or_update_time',
                                   del_method='$del_method',
-                                  remarks='$remark',or_status='1',pay_st='$pay_st' WHERE or_id ='$id'";
+                                  remarks='$remark',or_status='1',pay_st='$pay_st',confirmed_date='$marked_date' WHERE or_id ='$id'";
     }
     else{
         $sql = "UPDATE tbl_orders SET address='$add',
@@ -66,7 +73,7 @@
                                   or_st_date='$or_up_date',
                                   or_up_time='$or_update_time',
                                   del_method='$del_method',
-                                  remarks='$remark',or_status='1',pay_st='$pay_st' WHERE or_id ='$id'";
+                                  remarks='$remark',or_status='1',pay_st='$pay_st',confirmed_date='$marked_date' WHERE or_id ='$id'";
 
     }
 
