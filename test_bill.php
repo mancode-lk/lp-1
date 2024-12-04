@@ -121,6 +121,17 @@ $or_ids = $_REQUEST['selectedValues'];
                   <p style="font-size:20px;">: <?= $rowor['c_phone'] ?></p>
               </div>
             </div>
+            <div class="row">
+              <div class="col-2">
+                <h4 style="font-size:24px;">&nbsp;</h4>
+              </div>
+              <div class="col-2">
+                  <h4 style="font-size:20px;">Remark</h4>
+              </div>
+              <div class="col-8">
+                  <p style="font-size:20px;">: <?= $rowor['remarks'] ?></p>
+              </div>
+            </div>
           </div>
         </div>
         <?php
