@@ -22,11 +22,9 @@
         </li>
       <?php } ?>
 
-        <?php if($u_level == 1){ ?>
         <li class="<?php if($pg_name=='monitoring.php'){echo('active');} ?>" >
           <a href="monitoring.php" ><img src="assets/img/icons/eye.svg" alt="img"><span>Monitoring</span> </a>
         </li>
-      <?php } ?>
         <?php if($u_level == 1 || $u_level == 5 || $u_level == 4){ ?>
         <li class="<?php if($pg_name=='add_orders.php'){echo('active');} ?>" >
           <a href="add_orders.php" ><img src="assets/img/icons/plus11.svg" alt="img"><span>Add Order</span> </a>
@@ -55,10 +53,10 @@
           <a href="share_orders.php" ><img src="assets/img/icons/transfer1.svg" alt="img"><span> Share Orders</span> </a>
         </li>
         <li class="<?php if($pg_name=='page_management.php'){echo('active');} ?>" >
-          <a href="page_management.php" ><img src="assets/img/icons/wallet1.svg" alt="img"><span> Page Management</span> </a>
+          <a href="page_management.php" ><img src="assets/img/icons/wallet1.svg" alt="img"><span> Section Management</span> </a>
         </li>
         <li class="<?php if($pg_name=='add_items.php'){echo('active');} ?>" >
-          <a href="add_items.php" ><img src="assets/img/icons/product.svg" alt="img"><span> Items Management</span> </a>
+          <a href="add_items.php" ><img src="assets/img/icons/product.svg" alt="img"><span> Subject Management</span> </a>
         </li>
       <?php } ?>
         <li class="<?php if($pg_name=='add_city.php'){echo('active');} ?>" >

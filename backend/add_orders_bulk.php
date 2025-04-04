@@ -46,6 +46,20 @@
     }
 
     $_SESSION['or_id'] = $orids;
+    exit();
+   }
+
+   $sqlorder = "SELECT * FROM tbl_orders WHERE c_phone='$c_phone' AND or_desc='$o_des' AND or_status <=4 ";
+   $rsorders = $conn_new->query($sqlorder);
+
+   if ($rsorders->num_rows > 0) {
+     $orids =array();
+     while ($roworders = $rsorders->fetch_assoc()) {
+       array_push($orids,$roworders['or_id']);
+    }
+
+    $_SESSION['or_id_lp'] = $orids;
+    exit();
    }
 
    if($add == "empty"){

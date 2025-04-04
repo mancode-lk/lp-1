@@ -52,8 +52,22 @@ include '../backend/conn.php';
           <input type="text" class="form-control"  name="c_name" id="c_name" value="" placeholder="Customer Name"> &nbsp;||&nbsp;
           <input type="text" class="form-control"  name="cus_phone" id="cus_phone" value="" placeholder="Customer Phone"> &nbsp;||&nbsp;
           <input type="text" class="form-control"  name="w_number" id="w_number" value="" placeholder="whats app number" onkeyup="getSameValue()"> &nbsp;||&nbsp;
+          <select class="selectpicker" name="page_id" id="page_id">
+            <option value="">Select Section</option>
+            <?php
+
+              $sqlor="SELECT * FROM tbl_pages";
+              $rsor =$conn->query($sqlor);
+              $pageid = $_SESSION['pid'];
+              if ($rsor->num_rows > 0) {
+                while ($rowor = $rsor->fetch_assoc()) {
+                  $page_id = $rowor['page_id'];
+             ?>
+             <option value="<?= $page_id ?>" <?php if($page_id == $pageid){ echo "selected"; } ?> ><?= $rowor['page_name'] ?></option>
+           <?php } } ?>
+          </select>&nbsp;||&nbsp;
           <select class="selectpicker" name="desc" id="desc" onchange="loadSubData(this.options[this.selectedIndex].className)">
-            <option value="">Select Item</option>
+            <option value="">Select Subject</option>
             <?php
               $sql_items="SELECT * FROM tbl_items";
               $rs_items =$conn->query($sql_items);
@@ -67,31 +81,9 @@ include '../backend/conn.php';
           <select class="form-control" name="sub_name" id="sub_name">
 
           </select>&nbsp;||&nbsp;
-          <select class="selectpicker" name="user_id" id="user_id">
-            <?php
-              $sqlor="SELECT * FROM tbl_users WHERE u_level IN(2,5)";
-              $rsor =$conn->query($sqlor);
-              if ($rsor->num_rows > 0) {
-                while ($rowor = $rsor->fetch_assoc()) {
-                  $user_id = $rowor['u_id'];
-             ?>
-             <option value="<?= $user_id ?>"><?= $rowor['u_name'] ?></option>
-           <?php } } ?>
-          </select>&nbsp;||&nbsp;
-          <select class="selectpicker" name="page_id" id="page_id">
-            <?php
 
-              $sqlor="SELECT * FROM tbl_pages";
-              $rsor =$conn->query($sqlor);
-              $pageid = $_SESSION['pid'];
-              if ($rsor->num_rows > 0) {
-                while ($rowor = $rsor->fetch_assoc()) {
-                  $page_id = $rowor['page_id'];
-             ?>
-             <option value="<?= $page_id ?>" <?php if($page_id == $pageid){ echo "selected"; } ?> ><?= $rowor['page_name'] ?></option>
-           <?php } } ?>
-          </select>&nbsp;||&nbsp;
           <select class="selectpicker" name="mcu_id" id="mcu_id">
+            <option value="">Select Messege Center</option>
             <?php
 
               $sqlor="SELECT * FROM tbl_msg_center_user ORDER BY `tbl_msg_center_user`.`mcu_id` DESC";
@@ -103,7 +95,20 @@ include '../backend/conn.php';
              ?>
              <option value="<?= $mcu_id ?>"><?= $rowor['mcu_name'] ?></option>
            <?php } } ?>
-          </select>
+          </select>&nbsp;||&nbsp;
+          <select class="selectpicker" name="user_id" id="user_id">
+            <option value="">Select Staff</option>
+            <?php
+              $sqlor="SELECT * FROM tbl_users WHERE u_level IN(2,5)";
+              $rsor =$conn->query($sqlor);
+              if ($rsor->num_rows > 0) {
+                while ($rowor = $rsor->fetch_assoc()) {
+                  $user_id = $rowor['u_id'];
+             ?>
+             <option value="<?= $user_id ?>"><?= $rowor['u_name'] ?></option>
+           <?php } } ?>
+          </select>&nbsp;||&nbsp;
+
 										 <div class="d-none">
 										     <select class="form-control" name="del_meth" id="del_meth">
 											 <option value="0">Post Office</option>
@@ -254,12 +259,18 @@ include '../backend/conn.php';
     success: function(resp)
     {
         //if success then just output the text to the status div then clear the form inputs to prepare for new data
-        $('#o_number').val('');
-        $('#c_name').val('');
-        $('#cus_phone').val('');
-        $('#w_number').val('');
-      $('#viewS').load('loaddata.php');
-
+        console.log(resp);
+              if(resp == 700){
+                alert('The entered order already in the system');
+                $('#viewS').load('loaddata.php');
+              }
+              else {
+                $('#o_number').val('');
+                $('#c_name').val('');
+                $('#cus_phone').val('');
+                $('#w_number').val('');
+                $('#viewS').load('loaddata.php');
+              }
     },
     error: function (jqXHR, status, errorThrown)
     {
@@ -346,13 +357,19 @@ include '../backend/conn.php';
         data : postData,
         success: function(resp)
         {
-            alert(resp);
+            if(resp == 700){
+              alert('The entered order already in the system');
+              $('#viewS').load('loaddata.php');
+            }
+            else {
+              $('#o_number').val('');
+              $('#c_name').val('');
+              $('#cus_phone').val('');
+              $('#w_number').val('');
+              $('#viewS').load('loaddata.php');
+            }
             //if success then just output the text to the status div then clear the form inputs to prepare for new data
-            $('#o_number').val('');
-            $('#c_name').val('');
-            $('#cus_phone').val('');
-            $('#w_number').val('');
-          $('#viewS').load('loaddata.php');
+
 
         },
         error: function (jqXHR, status, errorThrown)

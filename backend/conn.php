@@ -20,6 +20,13 @@ $dbname = "posfkpop_new_lp_system";
 
 $conn = new mysqli($servername,$username,$password,$dbname);
 
+$servername_01 = "localhost";
+$username_01 = "posfkpop_lesischool";
+$password_01 = "y]yJmXvq8])G";
+$dbname_01 = "posfkpop_lesi_school";
+
+$conn_new = new mysqli($servername_01,$username_01,$password_01,$dbname_01);
+
 if(isset($_SESSION['uid'])){
   $u_id = $_SESSION['uid'];
   $u_level = $_SESSION['u_level'];

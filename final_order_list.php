@@ -28,8 +28,8 @@
                                         <input type="hidden" name="back_link" value="2" id="">
                                     <div class="form-group">
                                         <select name="page_id" id="" class="form-control" required>
-                                            <option value="">Select Page</option>
-                                            <option value="0">Remove Selected Page</option>
+                                            <option value="">Select Section</option>
+                                            <option value="0">Remove Selected Section</option>
                                             <?php
 									      $sql_pages ="SELECT * FROM tbl_pages";
 									      $rs_pages = $conn->query($sql_pages);
@@ -41,15 +41,15 @@
                                          <?php } } ?>
                                         </select>
                                     </div>
-                                    <button type="submit" class="btn btn-primary btn-sm">Select Page</button>
+                                    <button type="submit" class="btn btn-primary btn-sm">Select Section</button>
                                     </form>
                                     <hr>
                                     <form action="backend/sel_item.php" method="post">
                                         <input type="hidden" name="back_link" value="0" id="">
                                     <div class="form-group">
                                         <select name="item_id" id="" class="form-control" required>
-                                            <option value="">Select Item</option>
-                                            <option value="0">Remove Selected Item</option>
+                                            <option value="">Select Subject</option>
+                                            <option value="0">Remove Selected Subject</option>
                                             <?php
 									      $sql_pages ="SELECT * FROM tbl_items";
 									      $rs_pages = $conn->query($sql_pages);
@@ -61,7 +61,7 @@
                                          <?php } } ?>
                                         </select>
                                     </div>
-                                    <button type="submit" class="btn btn-warning btn-sm">Select Item</button>
+                                    <button type="submit" class="btn btn-warning btn-sm">Select Subject</button>
                                     </form> <br>
 																		<?php
 																				if(isset($_SESSION['item_id'])){
@@ -72,8 +72,8 @@
 	                                        <input type="hidden" name="back_link" value="0" id="">
 	                                    <div class="form-group">
 	                                        <select name="sub_item_id" id="" class="form-control" required>
-	                                            <option value="">Select Sub Item</option>
-	                                            <option value="0">Remove Selected Sub Item</option>
+	                                            <option value="">Select Grade</option>
+	                                            <option value="0">Remove Grade</option>
 	                                            <?php
 																					      $sql_pages ="SELECT * FROM tbl_sub_items WHERE item_id='$i_id'";
 																					      $rs_pages = $conn->query($sql_pages);
@@ -85,7 +85,7 @@
 	                                         <?php } } ?>
 	                                        </select>
 	                                    </div>
-	                                    <button type="submit" class="btn btn-success btn-sm">Select Sub Item</button>
+	                                    <button type="submit" class="btn btn-success btn-sm">Select Grade</button>
 																		</form> <br>
 																		<?php } ?>
 								</div>
@@ -199,7 +199,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<form  action="backend/confirm_complete.php" method="post">
+            <form  action="backend/confirm_complete.php" method="post">
 							<input type="hidden" name="id" value="" id="order_id_confirm">
 							<div class="form-group">
 								<label for="">Specified Date</label>
@@ -221,11 +221,43 @@
                                     <option value="2">Bank Transfer</option>
                                     <option value="3">Other Payment Method</option>
 
+								</select> <br>
+								<label for="">Delivery Method</label>
+								<select class="form-control" name="del_method" id="del_method">
+									<option value="0">Post Office</option>
+									<option value="1">Self Delivery</option>
 								</select>
 							</div>
+              <div class="form-group">
+                <select class="form-control js-example-basic-single select2" name="item" id="item" onchange="fetchSubItems()">
+                <option value="">Select Subject (Only If you want to change)</option>
+                <?php
+                $sql_items = "SELECT * FROM tbl_items";
+                $rs_items = $conn->query($sql_items);
+                if ($rs_items->num_rows > 0) {
+                while ($row_items = $rs_items->fetch_assoc()) {
+                    $item_id = $row_items['item_id']; // Assuming there's an `item_id` column
+                    $item_name = $row_items['item_name'];
+                ?>
+                <option value="<?= $item_id ?>"><?= $item_name ?></option>
+                <?php
+                }
+                }
+                ?>
+                </select>
+                </div>
+
+                <!-- Second Dropdown (Sub Items) -->
+                <div class="form-group">
+                <select class="form-control js-example-basic-single select2" name="sub_item" id="sub_item">
+                <option value="">Select Grade</option>
+                </select>
+                </div>
+
+
 							<div class="form-group">
 								<label for="">Select a District</label>
-								<select class="form-control js-example-basic-single select2" name="dis" onchange="selectCity(this.value)" id="district">
+								<select class="js-states form-control" name="dis" onchange="selectCity(this.value)" id="district">
 									<?php
 										$sqlDistric = "SELECT * FROM districts";
 										$rsDistric = $conn->query($sqlDistric);
@@ -239,12 +271,12 @@
 								<?php } } ?>
 								</select>
 							</div>
-
 							<div class="form-group">
 								<label for="">Select a City</label>
-								<select class="form-control js-example-basic-single select2" name="city" id="loadCities">
+								<select class="js-states form-control" name="city" id="loadCities">
 								</select>
-							</div>
+							</div><hr>
+                            <h5 onclick="getHowToSearchVideo()" style="cursor:pointer;border:1px solid #000;padding:5px 5px 5px 5px;border-radius:5px;"> How To Search?  </h5> <hr>
 							<div class="form-group">
 								<label for="">Re Mark</label>
 								<textarea name="remark" id="remark" class="form-control" rows="4" cols="80"></textarea>
@@ -507,7 +539,32 @@
 						  document.body.appendChild(form);
 						  form.submit();
 						}
+            function fetchSubItems() {
+            const itemId = document.getElementById("item").value; // Get selected item ID
+            const subItemDropdown = document.getElementById("sub_item");
 
+            // Show "Loading..." while fetching data
+            subItemDropdown.innerHTML = '<option value="">Loading...</option>';
+
+            // Check if an item is selected
+            if (!itemId) {
+              subItemDropdown.innerHTML = '<option value="">Select Sub Item</option>';
+              return;
+            }
+
+            // AJAX request to fetch sub-items
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "ajax_pages/fetch_sub_items.php", true); // Create a new file for backend processing
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onload = function () {
+              if (xhr.status === 200) {
+                  subItemDropdown.innerHTML = xhr.responseText; // Update with fetched data
+              } else {
+                  subItemDropdown.innerHTML = '<option value="">Failed to load sub-items</option>';
+              }
+            };
+            xhr.send("item_id=" + itemId); // Send the selected item ID to the server
+            }
 
 
 		</script>

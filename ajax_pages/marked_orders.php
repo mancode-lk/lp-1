@@ -281,7 +281,10 @@
       <td>
         <a onclick="load_order_details('<?= $rowSentOrders['or_id'] ?>')"><img src="assets/img/icons/eye.svg" alt="img"> </a> &nbsp; &nbsp;
         <a onclick="editOrder('<?= $rowSentOrders['or_id'] ?>')"><img src="assets/img/icons/edit.svg" alt="img"> </a> &nbsp; &nbsp;
+        <?php if ($u_level == 1) { ?>
+        
         <a onclick="deleteOrder('<?= $rowSentOrders['or_id'] ?>')"><img src="assets/img/icons/delete.svg" alt="img"> </a> &nbsp; &nbsp;
+      <?php } ?>
       </td>
     </tr>
     <?php if($bill_ready_st == 1 || $toBeDownloaded_st == 1){ ?>

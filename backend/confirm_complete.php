@@ -8,6 +8,7 @@
   $confirmed_date_value = mysqli_real_escape_string($conn,$_REQUEST['confirmed_date_value']);
   $dis = mysqli_real_escape_string($conn,$_REQUEST['dis']);
   $city = mysqli_real_escape_string($conn,$_REQUEST['city']);
+  $subitem = mysqli_real_escape_string($conn,$_REQUEST['sub_item']);
 
   $pay_st = mysqli_real_escape_string($conn,$_REQUEST['pay_type']);
 
@@ -15,7 +16,10 @@
 
   $dis = getDataBack($conn,'districts','id',$dis,'name_en');
 
-  $item = mysqli_real_escape_string($conn,$_REQUEST['desc']);
+  $item = mysqli_real_escape_string($conn,$_REQUEST['item']);
+
+  $item =getDataBack($conn,'tbl_items','item_id',$item,'item_name');
+
   $del_method = mysqli_real_escape_string($conn,$_REQUEST['del_method']);
 
   $or_up_date = date('Y-m-d');
@@ -37,6 +41,7 @@
         or_st_date='$or_up_date',
         or_up_time='$or_update_time',
         del_method='$del_method',
+        sub_name='$subitem',
         remarks='$remark',or_status='1',pay_st='$pay_st',confirmed_date='$marked_date' WHERE or_id ='$id'";
     }
     else{
@@ -73,6 +78,7 @@
                                   or_st_date='$or_up_date',
                                   or_up_time='$or_update_time',
                                   del_method='$del_method',
+                                  sub_name='$subitem',
                                   remarks='$remark',or_status='1',pay_st='$pay_st',confirmed_date='$marked_date' WHERE or_id ='$id'";
 
     }
@@ -80,7 +86,6 @@
   }
 
   $rs = $conn->query($sql);
-
 
   if ($rs > 0){
     header('location:'.$redirect_link);
